@@ -1,13 +1,4 @@
 # 이미지 경로에서 이미지들을 불러와 txt로 자동 저장하는 기능
-
-"""
-* Patient number : 650
-  * Test dataset : 0 ~ 50
-  * Train dataset : 51 ~ 600
-  * Validation dataset : 601 ~ 650
-  * landmark number : 46
-"""
-
 # label_data : point 정보가 담긴 csv file
 def textwrite(target_dir, label_data, dsVOC, year):
 

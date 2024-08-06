@@ -7,3 +7,7 @@
 - opencv
 - pandas
 - tqdm
+
+```python
+conda install numpy opencv pandas tqdm
+```

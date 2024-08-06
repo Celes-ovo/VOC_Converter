@@ -1,8 +1,7 @@
-import pandas as pd, numpy as np
+import numpy as np
 from xml.etree.ElementTree import Element, SubElement, ElementTree
 import cv2, os
 from tqdm import tqdm
-
 
 # label_data : csv file
 
@@ -21,22 +20,9 @@ def xml_writer(target_dir, label_data, dsVOC, year, dir_src, save_dir, landmark_
         element1.text = label_data.iloc[i]['ID']
 
         image_name = label_data.iloc[i]['ID']
-
-        ###
-        # img = cv2.imread(f'./{dir_src}/{image_name}.jpg', cv2.IMREAD_GRAYSCALE)
-        # target_path = f'{save_dir}/{image_name}.jpg'
-        
-        # img = cv2.imread(f'./{dir_src}/{image_name}.png', cv2.IMREAD_GRAYSCALE)
-
-        
-
-        # img = cv2.imread(f'./{dir_src}/{image_name}.png')
         img = cv2.imread(f'{dir_src}/{img_dir[i]}')
         
         target_path = f'{save_dir}/{image_name}.png'
-
-        ##
-        # print(image_name)
 
         cv2.imwrite(target_path, img[:, :, ::-1])
 
@@ -69,11 +55,7 @@ def xml_writer(target_dir, label_data, dsVOC, year, dir_src, save_dir, landmark_
             
             x_loc = label_data.iloc[i][landmark_name[j]+'_x']
             y_loc = label_data.iloc[i][landmark_name[j]+'_y']
-            
-            # idea : 1 이상, 1 이하일 경우 -> parameter=False 등으로 해서 True 여부 체크하는 기능 만드는 것 필요
-            # mode 등을 두어서 label data가 소숫점일 경우와 1 이상일 경우에 대해 각각 수행.
-            
-            # tmp = np.array([x_loc*float(width)-bbox_size, x_loc*float(width)+bbox_size, y_loc*float(width)-bbox_size, y_loc*float(width)+bbox_size]).astype(int)
+        
             try:
                 tmp = np.array([x_loc-bbox_size, x_loc+bbox_size, y_loc-bbox_size, y_loc+bbox_size]).astype(int)
             
@@ -97,8 +79,7 @@ def xml_writer(target_dir, label_data, dsVOC, year, dir_src, save_dir, landmark_
         
         
         tree = ElementTree(root)
-        
-        #i_2 = '{0:04d}'.format(i)
+
         i_2 = label_data['ID'][i]
         fileName = f"{target_dir}/VOCdevkit/{dsVOC}{year}/Annotations/{i_2}.xml"
         

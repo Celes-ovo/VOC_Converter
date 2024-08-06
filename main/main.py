@@ -7,10 +7,9 @@ import sys
 from utils.sm_img_proc import get_classes
 
 
-
 def __init__(self):
     self.label_data = None
-    self.dsVOC = 'ceph_VOC' #'VOC'
+    self.dsVOC = 'VOC'
     self.year = '2007'
     self.csv = None
 
@@ -25,19 +24,14 @@ def main():
     csv_name = sys.argv[1]
     dir = sys.argv[2]
     target_dir = sys.argv[3]
-
-    # print(csv_name, dir, target_dir)
-    # return
-
     
     # parameters for file creation
-    dsVOC = 'ceph_VOC' #'VOC'
+    dsVOC = 'VOC'
     year = '2023'
 
-    # 이미지의 size에 따라 가변적으로 수정되어야 하는 parameter # celes
+    # 이미지의 size에 따라 가변적으로 수정
     box_parm = 32
 
-    # landmark_name_fstr = '/mnt/d/MMMIL/Pnet/src/workspace/Preprocessing/Landmark pointer/landmark_46.csv'
     landmark_name, _      = get_classes() # celes
 
 
@@ -73,21 +67,12 @@ def main():
 
     print('[Log] Directory has been created.')
 
-
-    #image_shape_to_csv()
     textwrite(target_dir, label_data, dsVOC, year)
     xml_writer(target_dir, label_data, dsVOC, year, dir, main_dir + '/JPEGImages/',
                 landmark_name, box_parm=box_parm)
 
 
     print('================================ \n\n >>> Done')
-
-
-
-    # getopt
-    # https://kaspyx.tistory.com/69
-    # os.path.join 사용해보기
-
 
 if __name__ == "__main__":
     main()
