@@ -4,7 +4,7 @@ from xml_generate import xml_writer
 import pandas as pd, os
 import sys
 
-from sm_img_proc import get_classes
+from utils.sm_img_proc import get_classes
 
 
 

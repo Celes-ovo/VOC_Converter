@@ -1,0 +1,34 @@
+Nasion
+Sella
+Porion
+Pterygoid point
+Basion
+Articulare
+Orbitale
+ANS
+PNS
+Point A
+Prosthion
+Incision superius apicalis
+Incision superius incisalis
+Incision inferius incisalis
+Incision inferius apicalis
+Infradentale
+Point B
+Pogonion
+Gnathion
+Menton
+Gonion
+Maxillary first molar
+Mandibular first molar
+Soft tissue glabella
+Soft tissue nasion
+Pronasale
+Subnasale
+Soft tissue subspinale
+Labrale superius
+Stomion
+Labrale inferius
+Soft tissue submentale
+Soft tissue pogonion
+Soft tissue gnathion
