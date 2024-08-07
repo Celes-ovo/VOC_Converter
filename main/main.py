@@ -55,7 +55,7 @@ def main():
         label_data = pd.read_csv(f'{csv_name}')
 
 
-    print('\n >>> csv file has been loaded.\n\n ================================')
+    print('\n >>> csv file has been loaded.\n\n================================')
 
 
 
