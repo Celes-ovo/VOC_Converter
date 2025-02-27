@@ -29,10 +29,13 @@ def main():
     dsVOC = 'VOC'
     year = '2023'
 
+    # 데이터셋의 class name
+    class_name = 'test_classes'
+    
     # 이미지의 size에 따라 가변적으로 수정
     box_parm = 32
 
-    landmark_name, _      = get_classes() # celes
+    landmark_name, _      = get_classes(class_name) # celes
 
 
     # csv load
